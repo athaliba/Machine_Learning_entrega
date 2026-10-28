@@ -1,4 +1,4 @@
-"""Pipeline inicial de Gradient Boosting adaptado da referência."""
+"""Pipelines dos três modelos comparados na validação cruzada."""
 
 import numpy as np
 from sklearn.compose import ColumnTransformer
@@ -46,5 +46,29 @@ def create_gradient_boosting_pipeline():
         ("preprocessor", create_preprocessor()),
         ("model", GradientBoostingClassifier(
             n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42,
+        )),
+    ])
+
+
+def create_xgboost_pipeline():
+    from xgboost import XGBClassifier
+
+    return Pipeline([
+        ("preprocessor", create_preprocessor()),
+        ("model", XGBClassifier(
+            n_estimators=100, learning_rate=0.1, max_depth=3,
+            random_state=42, n_jobs=2, eval_metric="logloss",
+        )),
+    ])
+
+
+def create_lightgbm_pipeline():
+    from lightgbm import LGBMClassifier
+
+    return Pipeline([
+        ("preprocessor", create_preprocessor()),
+        ("model", LGBMClassifier(
+            n_estimators=100, learning_rate=0.1, max_depth=3,
+            random_state=42, n_jobs=2, verbosity=-1,
         )),
     ])
