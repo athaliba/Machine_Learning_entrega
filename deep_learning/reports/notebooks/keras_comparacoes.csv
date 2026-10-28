@@ -1,0 +1,6 @@
+grupo,opcao,val_pr_auc_ultima_epoca
+ativação,relu,0.23451045155525208
+ativação,tanh,0.23404327034950256
+ativação,sigmoid,0.22604034841060638
+otimizador,sgd,0.1878296434879303
+otimizador,adam,0.23451045155525208
