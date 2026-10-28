@@ -67,3 +67,31 @@ def save_dataset(dataset: pd.DataFrame, output_path: Path) -> None:
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     dataset.to_csv(output_path, index=False)
+
+
+# Recorte operacional observado no arquivo, como no projeto de referência.
+OPEN_STATUSES = ["approved", "invoiced", "processing", "shipped"]
+
+
+def create_inference_dataset(orders, items, customers) -> pd.DataFrame:
+    """Monta pedidos abertos sem criar o alvo ou exigir uma entrega futura.
+
+    Este é o recorte observado no CSV histórico, não a reconstrução do status
+    que cada pedido tinha na aprovação. Datas futuras não entram nas features.
+    Pedidos sem itens ou estado são preservados para inspeção e imputação.
+    """
+    open_mask = orders["order_status"].isin(OPEN_STATUSES)
+    eligible = (
+        open_mask
+        & orders["order_approved_at"].notna()
+        & orders["order_estimated_delivery_date"].notna()
+        & orders["order_delivered_customer_date"].isna()
+    )
+    data = orders.loc[eligible].copy()
+    data = data.merge(aggregate_items(items), on="order_id", how="left",
+                      validate="one_to_one")
+    data = data.merge(
+        customers[["customer_id", "customer_state"]],
+        on="customer_id", how="left", validate="many_to_one",
+    )
+    return data

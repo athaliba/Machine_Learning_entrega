@@ -1,0 +1,30 @@
+{
+  "model_name": "XGBoost",
+  "threshold": 0.14,
+  "prediction_file": "open_orders_predictions.csv",
+  "n_orders": 1724,
+  "n_flagged": 342,
+  "risk_counts": {
+    "alto": 93,
+    "médio": 249,
+    "baixo": 1382
+  },
+  "missing_features_before_pipeline": {
+    "promised_days": 1,
+    "item_count": 3,
+    "seller_count": 3,
+    "total_price": 3,
+    "total_freight": 3,
+    "approval_hours": 0,
+    "avg_item_price": 3,
+    "freight_ratio": 3,
+    "is_short_deadline": 1,
+    "is_weekend_purchase": 0,
+    "purchase_hour": 0,
+    "purchase_weekday": 0,
+    "purchase_month": 0,
+    "customer_state": 0
+  },
+  "scope": "pedidos abertos observados no CSV historico; sem simulacao temporal",
+  "risk_bands": "heuristica da referencia; escores nao calibrados"
+}

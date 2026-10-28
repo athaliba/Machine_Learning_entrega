@@ -1,4 +1,6 @@
-"""Executa preparação, seleção por validação cruzada, treino e avaliação."""
+"""Executa o treinamento ou a inferência a partir do modelo salvo."""
+
+import argparse
 
 from loguru import logger
 
@@ -11,7 +13,7 @@ from module_olist.modeling.train import train_model
 from module_olist.split import split_data
 
 
-def main():
+def train_and_evaluate():
     logger.info("Preparando a base de pedidos...")
     orders, items, customers = load_dataset(
         RAW_DATA_DIR / "olist_orders_dataset.csv",
@@ -42,6 +44,20 @@ def main():
         "Não use seus resultados para retunar modelo ou limiar."
     )
     logger.success("Validação cruzada, treinamento e avaliação concluídos.")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Treinamento e inferência Olist")
+    parser.add_argument(
+        "--mode", choices=["train", "infer", "all"], default="train",
+        help="train: valida e treina; infer: usa o modelo salvo; all: executa ambos.",
+    )
+    args = parser.parse_args()
+    if args.mode in ["train", "all"]:
+        train_and_evaluate()
+    if args.mode in ["infer", "all"]:
+        from module_olist.inference import run_inference
+        run_inference()
 
 
 if __name__ == "__main__":
