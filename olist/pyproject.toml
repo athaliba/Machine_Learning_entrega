@@ -16,6 +16,8 @@ classifiers = [
     "License :: OSI Approved :: MIT License"
 ]
 dependencies = [
+    "fg-data-profiling[notebook]>=4.20.0",
+    "ipykernel>=7.4.0",
     "ipython",
     "jupyterlab",
     "loguru",
@@ -24,6 +26,7 @@ dependencies = [
     "notebook",
     "numpy",
     "pandas",
+    "pandera[pandas]>=0.35.0",
     "pip",
     "pytest",
     "python-dotenv",
