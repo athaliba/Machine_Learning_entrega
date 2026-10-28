@@ -1,0 +1,54 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "module_reconhecimento_facial"
+version = "0.0.1"
+description = "Sistema de reconhecimento facial com detec\u00e7\u00e3o de rostos e compara\u00e7\u00e3o de embeddings para identifica\u00e7\u00e3o de pessoas cadastradas."
+authors = [
+  { name = "Rafael Athaliba" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+dependencies = [
+    "deepface[tensorflow]==0.0.103",
+    "ipython",
+    "jupyterlab",
+    "loguru",
+    "matplotlib",
+    "mkdocs",
+    "notebook",
+    "numpy",
+    "pandas",
+    "pillow>=13.0.0",
+    "pip",
+    "pytest",
+    "python-dotenv",
+    "ruff",
+    "scikit-learn",
+    "tensorflow>=2.21,<2.22",
+    "tf-keras>=2.21,<2.22",
+    "tqdm",
+    "typer",
+    "werkzeug>=3.1.9",
+]
+requires-python = "~=3.12.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["module_reconhecimento_facial"]
+include = ["pyproject.toml", "module_reconhecimento_facial/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["module_reconhecimento_facial"]
+force-sort-within-sections = true
+

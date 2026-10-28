@@ -1,0 +1,4 @@
+﻿image,face_index,status,name,distance,threshold,face_confidence,error
+pessoa_nao_cadastrada.jpg,1,desconhecido,desconhecido,0.9356033995147297,0.3,1.0,
+rafael_frontal.jpg,1,cadastrado,rafael,0.16827220392496522,0.3,1.0,
+rafael_outra_foto.jpg,1,desconhecido,desconhecido,0.32010906998109534,0.3,1.0,
