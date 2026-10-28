@@ -1,0 +1,30 @@
+{
+  "seed": 42,
+  "n_train": 45000,
+  "n_validation": 5000,
+  "n_test": 10000,
+  "class_names": [
+    "avião",
+    "automóvel",
+    "pássaro",
+    "gato",
+    "cervo",
+    "cachorro",
+    "sapo",
+    "cavalo",
+    "navio",
+    "caminhão"
+  ],
+  "selection_metric": "val_loss",
+  "best_epoch": 30,
+  "test_metrics": {
+    "CNN inicial": {
+      "accuracy": 0.644599974155426,
+      "loss": 1.0528947114944458
+    },
+    "Segunda CNN": {
+      "accuracy": 0.8567000031471252,
+      "loss": 0.43345242738723755
+    }
+  }
+}

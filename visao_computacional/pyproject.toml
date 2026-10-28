@@ -16,6 +16,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License"
 ]
 dependencies = [
+    "ipykernel>=7.4.0",
     "ipython",
     "jupyterlab",
     "loguru",
@@ -29,6 +30,7 @@ dependencies = [
     "python-dotenv",
     "ruff",
     "scikit-learn",
+    "tensorflow>=2.21.0",
     "tqdm",
     "typer",
 ]

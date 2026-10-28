@@ -1,0 +1,11 @@
+classe,n_imagens,n_acertos,recall
+avião,1000,896,0.896
+automóvel,1000,951,0.951
+pássaro,1000,776,0.776
+gato,1000,651,0.651
+cervo,1000,846,0.846
+cachorro,1000,758,0.758
+sapo,1000,959,0.959
+cavalo,1000,880,0.88
+navio,1000,925,0.925
+caminhão,1000,925,0.925
