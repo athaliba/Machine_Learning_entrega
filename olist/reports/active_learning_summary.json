@@ -1,0 +1,36 @@
+{
+  "simulation": true,
+  "model": "LightGBM",
+  "initial_fraction": 0.1,
+  "n_queries": 500,
+  "n_rounds": 10,
+  "random_state": 42,
+  "n_train": 77164,
+  "n_test": 19292,
+  "reference_average_precision_all_labels": 0.2679627394974803,
+  "test_previously_evaluated": true,
+  "evaluation_used_for_queries": false,
+  "n_seeds": 1,
+  "sklearn_version": "1.9.1",
+  "lightgbm_version": "4.7.0",
+  "final_results": [
+    {
+      "estrategia": "incerteza",
+      "rodada": 10,
+      "n_rotulados": 12716,
+      "fracao_rotulada": 0.16479187185734281,
+      "n_positivos_rotulados": 2252,
+      "roc_auc": 0.7491724956659855,
+      "average_precision": 0.2538488996726909
+    },
+    {
+      "estrategia": "aleatoria",
+      "rodada": 10,
+      "n_rotulados": 12716,
+      "fracao_rotulada": 0.16479187185734281,
+      "n_positivos_rotulados": 1017,
+      "roc_auc": 0.756689467214053,
+      "average_precision": 0.24522668338812453
+    }
+  ]
+}
