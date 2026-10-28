@@ -49,8 +49,8 @@ def train_and_evaluate():
 def main():
     parser = argparse.ArgumentParser(description="Treinamento e inferência Olist")
     parser.add_argument(
-        "--mode", choices=["train", "infer", "all"], default="train",
-        help="train: valida e treina; infer: usa o modelo salvo; all: executa ambos.",
+        "--mode", choices=["train", "infer", "explain", "all"], default="train",
+        help="train: valida e treina; infer: prevê; explain: explica; all: executa tudo.",
     )
     args = parser.parse_args()
     if args.mode in ["train", "all"]:
@@ -58,6 +58,9 @@ def main():
     if args.mode in ["infer", "all"]:
         from module_olist.inference import run_inference
         run_inference()
+    if args.mode in ["explain", "all"]:
+        from module_olist.explain import generate_explanations
+        generate_explanations()
 
 
 if __name__ == "__main__":
