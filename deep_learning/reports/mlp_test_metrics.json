@@ -1,0 +1,29 @@
+{
+  "model": "MLP Keras (128, 64)",
+  "threshold": 0.5,
+  "n_test": 19292,
+  "metrics": {
+    "accuracy": 0.6923076923076923,
+    "precision": 0.1666920847948757,
+    "recall": 0.6984025559105431,
+    "f1": 0.26914553065747354,
+    "roc_auc": 0.7628468405535067,
+    "average_precision": 0.23976074878943376
+  },
+  "positive_rate_test": 0.08112170848019905,
+  "baseline_most_frequent": {
+    "accuracy": 0.9188782915198009,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "roc_auc": 0.5,
+    "average_precision": 0.08112170848019905
+  },
+  "confusion_matrix": {
+    "tn": 12263,
+    "fp": 5464,
+    "fn": 472,
+    "tp": 1093
+  },
+  "test_previously_used_in_olist": true
+}
