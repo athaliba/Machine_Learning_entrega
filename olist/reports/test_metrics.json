@@ -1,0 +1,29 @@
+{
+  "model_name": "Gradient Boosting",
+  "threshold": 0.5,
+  "n_test": 19292,
+  "positive_rate_test": 0.08112170848019905,
+  "validation": "holdout aleatorio estratificado por pedido",
+  "metrics": {
+    "accuracy": 0.9193966410947543,
+    "precision": 0.625,
+    "recall": 0.01597444089456869,
+    "f1": 0.03115264797507788,
+    "roc_auc": 0.7640984285807232,
+    "average_precision": 0.2687493544246974
+  },
+  "confusion_matrix": {
+    "tn": 17712,
+    "fp": 15,
+    "fn": 1540,
+    "tp": 25
+  },
+  "baseline_most_frequent": {
+    "accuracy": 0.9188782915198009,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "roc_auc": 0.5,
+    "average_precision": 0.08112170848019905
+  }
+}

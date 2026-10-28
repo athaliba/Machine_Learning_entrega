@@ -19,6 +19,7 @@ dependencies = [
     "fg-data-profiling[notebook]>=4.20.0",
     "ipykernel>=7.4.0",
     "ipython",
+    "joblib>=1.6.0",
     "jupyterlab",
     "loguru",
     "matplotlib",
@@ -31,7 +32,7 @@ dependencies = [
     "pytest",
     "python-dotenv",
     "ruff",
-    "scikit-learn",
+    "scikit-learn>=1.2",
     "tqdm",
     "typer",
 ]
